@@ -2,6 +2,11 @@ package com.addressbook;
 
 public class ContactInfo {
  private String first,last,address,city,state,zip,phoneNumber,email;
+ 
+ public String toString() {
+	 return ("First Name: "+first+"\n Last Name: "+last+"\n Address: "+address+"\n City: "+city+"\n State: "+state+"\n zip: "
+			 +zip+"\n Phone Number: "+phoneNumber+"\n Email: "+email);
+ }
 
 public String getFirst() {
 	return first;

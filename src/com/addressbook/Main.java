@@ -14,6 +14,9 @@ AddressBook addressbook=new AddressBook();
     {   
 	System.out.println("************Your Address Book***************");
 	System.out.println("Press 1 for add contact: ");
+	System.out.println("Press 2 for edit contact: ");
+	System.out.println("Press 3 for display contact: ");
+	System.out.println("Press 4 for delete contact: ");
 	int choose=(new Scanner(System.in).nextInt());
 	switch(choose)
 	 {
@@ -21,7 +24,19 @@ AddressBook addressbook=new AddressBook();
 	        System.out.println();
 	        addressbook.displayContact();
 	        System.out.println();
-	 }
+	        break;
+	case 2: String name=addressbook.getName();
+		    addressbook.EditContact(name);
+		    System.out.println("Contact update Successfully.");
+		    break;
+	case 3:
+		   addressbook.displayContact();
+		   break;
+	case 4: 
+		addressbook.deleteContact(addressbook.getName());
+		System.out.println("DElete contact Successfully.");
+	  
+	}
 	choise();
    }
 	public static void main(String[] args) {
