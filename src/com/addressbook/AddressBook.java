@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
+	
 	/*
 	 * Create arraylist of contactinfo class 
 	 * take info and store in array
 	 * using add method take inputfrom user and tore in array
 	 * then display the contact
+	 * Arraylist are able to store multiple data(contact)
 	 */
 	 ArrayList<ContactInfo> contact=new ArrayList<ContactInfo>();
-	
 
 public void addContact() {
 	 ContactInfo contactinfo=new ContactInfo();
