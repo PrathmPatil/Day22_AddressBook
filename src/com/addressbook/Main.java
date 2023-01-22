@@ -4,15 +4,62 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-	
+	    
+	AddressBook addressbook=new AddressBook();
 	/*
 	 * create obj of AddressBook class 
 	 * create choise method and take working condition from user
 	 * using while loop recurcivelly call t choise method;
 	 */
-AddressBook addressbook=new AddressBook();
+		/*
+	  * Create multiple books
+	  */
 ArrayList<AddressBook> addressbooklist=new ArrayList<AddressBook>();
-  
+
+//     public void books()
+//     {
+//    	 AddressBook addressbook=new AddressBook();
+//    		Main main=new Main();
+//
+//	System.out.println("Enter book name: ");
+//	String bookName=(new Scanner (System.in)).nextLine();
+//	addressbooklist.add(addressbook);
+//     }
+//    public void bookList()
+//     {
+//	  System.out.println("Press 1 for new AddressBook: ");
+//	  int booknumber=(new Scanner(System.in)).nextInt();
+//	  switch(booknumber)
+//	  {
+//	  case 1: Main main=new Main();
+//	         main.books();
+//	         break;
+//	         
+//	  }
+//  }
+      public void bookList()
+      {
+    	  AddressBook addressbook=new AddressBook();
+    		Main main=new Main();
+
+    	  addressbook.addbook();
+    	  System.out.println("press 1 for add book: ");
+    	  System.out.println("press 2 for show book name: ");
+    	  System.out.println("press 3 for add contact: ");
+    	  
+    	  int choose=(new Scanner(System.in).nextInt());
+    	  switch(choose)
+    	  {
+    	  case 1: addressbook.addbook();
+    	  break;
+    	  case 2: addressbook.displayBooks();
+    	         bookList();
+    	  break;
+    	  case 3: main.choise();
+    	  break;
+    	  }
+    	  
+      }
         public void choise()
     {   
         	boolean loop=true;
@@ -48,8 +95,8 @@ ArrayList<AddressBook> addressbooklist=new ArrayList<AddressBook>();
 		break;
 	case 5: loop=false;
 	         Main main=new Main();
-            
-	break;
+              main.bookList();
+	    break;
 	  
 	}
 	}
@@ -58,7 +105,8 @@ ArrayList<AddressBook> addressbooklist=new ArrayList<AddressBook>();
 		System.out.println("Welcme in AddressBook");
 
              Main main=new Main();
-//            
+             
+             main.bookList();
              main.choise();
 	
    	}

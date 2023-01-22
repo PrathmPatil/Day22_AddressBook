@@ -2,12 +2,20 @@ package com.addressbook;
 
 public class ContactInfo {
  private String first,last,address,city,state,zip,phoneNumber,email;
- 
+ private String books;
+ public String toBookString() {
+	 return ("Book Name: "+books);
+ }
  public String toString() {
-	 return ("First Name: "+first+"\n Last Name: "+last+"\n Address: "+address+"\n City: "+city+"\n State: "+state+"\n zip: "
+	 return ("Frist Name: "+first+"\n Last Name: "+last+"\n Address: "+address+"\n City: "+city+"\n State: "+state+"\n zip: "
 			 +zip+"\n Phone Number: "+phoneNumber+"\n Email: "+email);
  }
-
+public String getBooks() {
+	return books;
+}
+public void setBooks(String books) {
+	this.books=books;
+}
 public String getFirst() {
 	return first;
 }
@@ -71,6 +79,5 @@ public String getEmail() {
 public void setEmail(String email) {
 	this.email = email;
 }
-
  
 }

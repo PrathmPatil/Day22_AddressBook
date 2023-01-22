@@ -13,10 +13,29 @@ public class AddressBook {
 	 * Arraylist are able to store multiple data(contact)
 	 */
 	 ArrayList<ContactInfo> contact=new ArrayList<ContactInfo>();
+	 ArrayList<ContactInfo> book=new ArrayList<ContactInfo>();
+	 //Scanner sc=new Scanner(System.in);
+	 ContactInfo contactinfo=new ContactInfo();
+	 ArrayList<AddressBook> addressbooklist=new ArrayList<AddressBook>();
+	 /*
+	  * Create multiple books
+	  */
+	 public void addbook() {
+		 ContactInfo bookcontactinfo=new ContactInfo();
+		 System.out.println("Enter book name: ");
+		 Scanner sc=new Scanner(System.in);
+		 bookcontactinfo.setBooks(sc.nextLine());
+		 book.add(bookcontactinfo);
+	 }
+	 public void displayBooks() {
+		 book.forEach((info)->{
+			 System.out.println(info.toBookString());
+		 });
+	 }
 
 public void addContact() {
-	 ContactInfo contactinfo=new ContactInfo();
-	 Scanner sc=new Scanner(System.in);
+	Scanner sc=new Scanner(System.in);
+	
 	 System.out.println("Enter first name: ");
 	contactinfo.setFirst(sc.nextLine());
 	System.out.println("Enter last name: ");
@@ -67,7 +86,7 @@ public void deleteContact(String name)
 	contact.remove(getContactIndex(name));
 }
 /*
- * get name frm user
+ * get name from user
  */
 public String getName()
 {
